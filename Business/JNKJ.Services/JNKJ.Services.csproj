@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E837E4ED-15EA-4633-B56E-C553D5645F96}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JNKJ.Services</RootNamespace>
+    <AssemblyName>JNKJ.Services</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AipSdk">
+      <HintPath>..\..\packages\Face\AipSdk.dll</HintPath>
+    </Reference>
+    <Reference Include="aliyun-net-sdk-core">
+      <HintPath>..\..\packages\aliyun-net-sdk-core.dll</HintPath>
+    </Reference>
+    <Reference Include="aliyun-net-sdk-dysmsapi">
+      <HintPath>..\..\packages\aliyun-net-sdk-dysmsapi.dll</HintPath>
+    </Reference>
+    <Reference Include="Beyova.Common">
+      <HintPath>..\..\packages\JPush\Beyova.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Beyova.JPush">
+      <HintPath>..\..\packages\JPush\Beyova.JPush.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.Extended">
+      <HintPath>..\..\packages\EntityFramework.Extended.6.1.0.168\lib\net45\EntityFramework.Extended.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="JWT, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\JWT.3.0.0\lib\net35\JWT.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Qiniu">
+      <HintPath>..\..\packages\Qiniu.Shared.7.2.15\lib\Qiniu.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Authority\Interface\IMenuOrButtonService.cs" />
+    <Compile Include="Authority\Interface\IRolesService.cs" />
+    <Compile Include="Authority\Realize\MenuOrButtonService.cs" />
+    <Compile Include="Authority\Realize\RolesService.cs" />
+    <Compile Include="Face\FaceID.cs" />
+    <Compile Include="Face\FaceIDService.cs" />
+    <Compile Include="Face\IFaceIDService.cs" />
+    <Compile Include="General\ConstKeys.cs" />
+    <Compile Include="JPush\IJPushService.cs" />
+    <Compile Include="JPush\JPushService.cs" />
+    <Compile Include="JPush\PushRequest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Qiniu\IQiniuService.cs" />
+    <Compile Include="Qiniu\QiniuService.cs" />
+    <Compile Include="SMS\ISMSService.cs" />
+    <Compile Include="SMS\SMSService.cs" />
+    <Compile Include="SMS\SMSTemplateState.cs" />
+    <Compile Include="TencentIM\ITencentImService.cs" />
+    <Compile Include="TencentIM\TencentImService.cs" />
+    <Compile Include="UserCenter\Interface\IEnterpriseInfoService.cs" />
+    <Compile Include="UserCenter\Interface\IDeptInfoService.cs" />
+    <Compile Include="UserCenter\Interface\IRelationshipService.cs" />
+    <Compile Include="UserCenter\Interface\ISubContractor.cs" />
+    <Compile Include="UserCenter\Interface\ITokenService.cs" />
+    <Compile Include="UserCenter\Interface\IUserInfo.cs" />
+    <Compile Include="UserCenter\Interface\IUserInfoLog.cs" />
+    <Compile Include="UserCenter\Interface\IUserLogin.cs" />
+    <Compile Include="UserCenter\Realize\EnterpriseInfoService.cs" />
+    <Compile Include="UserCenter\Realize\DeptInfoService.cs" />
+    <Compile Include="UserCenter\Realize\RelationshipService.cs" />
+    <Compile Include="UserCenter\Realize\SubContractorService.cs" />
+    <Compile Include="UserCenter\Realize\TokenService.cs" />
+    <Compile Include="UserCenter\Realize\UserInfoLogService.cs" />
+    <Compile Include="UserCenter\Realize\UserInfoService.cs" />
+    <Compile Include="UserCenter\Realize\UserLoginService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Libraries\JNKJ.Cache\JNKJ.Cache.csproj">
+      <Project>{acdeb093-804e-4396-a15f-1412653ada43}</Project>
+      <Name>JNKJ.Cache</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\JNKJ.Core\JNKJ.Core.csproj">
+      <Project>{da556a21-f981-4e98-97ae-a3691c18087b}</Project>
+      <Name>JNKJ.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\JNKJ.Data\JNKJ.Data.csproj">
+      <Project>{afbfbfd1-8130-415a-ab35-3250d48b35f2}</Project>
+      <Name>JNKJ.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\JNKJ.Domain\JNKJ.Domain.csproj">
+      <Project>{93a8a8fb-0fc0-4547-88e1-2bcccf41ed2f}</Project>
+      <Name>JNKJ.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Presentation\JNKJ.DTO\JNKJ.Dto.csproj">
+      <Project>{15CA06D6-1A90-4B42-AEFB-1516FDBC1632}</Project>
+      <Name>JNKJ.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JNKJ.Common\JNKJ.Common.csproj">
+      <Project>{fef29a95-035a-4d9f-9c8d-4fdb52f3ba7d}</Project>
+      <Name>JNKJ.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
